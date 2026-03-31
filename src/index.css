@@ -1,20 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-  --bg-primary: #050505;
-  --bg-secondary: #0a0a0a;
-  --bg-glass: rgba(20, 20, 25, 0.7);
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
+  /* Clean Academic Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
   
-  --accent-blue: #3b82f6;
-  --accent-purple: #8b5cf6;
-  --accent-glow: rgba(59, 130, 246, 0.3);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
   
-  --border-glass: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(12px);
+  /* IIT BBSR Branding (Primary Blue and secondary cyan/gold hints) */
+  --accent-blue: #005a9c;
+  --accent-blue-hover: #00407a;
+  --accent-light: #e0f2fe;
+  --accent-purple: #6b21a8;
+  --accent-glow: rgba(0, 90, 156, 0.15);
   
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-light: #e2e8f0;
+  --border-glass: #cbd5e1;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
+  
+  --transition-smooth: all 0.25s ease-in-out;
 }
 
 * {
@@ -24,158 +34,161 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--bg-primary);
+  font-family: 'Inter', 'Roboto', sans-serif;
+  background-color: var(--bg-secondary);
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: inherit;
+  color: var(--accent-blue);
   text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+a:hover {
+  color: var(--accent-blue-hover);
+  text-decoration: underline; /* Academic sites favour clear accessible links */
 }
 
 /* Typography styles */
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
 }
 
 h1 {
-  font-size: 3.5rem;
-  background: linear-gradient(135deg, #fff 0%, var(--text-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2.75rem;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
   position: relative;
   display: inline-block;
+  padding-bottom: 0.25rem;
+  border-bottom: 3px solid var(--accent-blue);
 }
 
-h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 50%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-blue), transparent);
-  border-radius: 2px;
+h3 {
+  font-size: 1.25rem;
 }
 
-/* Glassmorphism Classes */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Generic Card Styles for Academic Sites */
 .glass-panel {
-  background: var(--bg-glass);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--border-glass);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
 }
 
 .glass-card {
-  background: var(--bg-glass);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--border-glass);
-  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
   padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
 }
 
 .glass-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 40px var(--accent-glow);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-blue);
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
 .page-container {
-  padding-top: 5rem;
-  min-height: calc(100vh - 80px); /* 80px footer approximation */
+  padding-top: 6rem; /* Account for fixed navbar */
+  min-height: calc(100vh - 80px); /* 80px footer approx */
   padding-left: 2rem;
   padding-right: 2rem;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
+  padding-bottom: 4rem;
 }
 
 /* Utilities */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-blue); /* Removed gradient for academic clarity, kept class name */
+  font-weight: 800;
 }
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-  color: white;
-  border-radius: 8px;
-  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--accent-blue);
+  color: white !important;
+  border-radius: 4px;
+  font-weight: 600;
   transition: var(--transition-smooth);
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 15px var(--accent-glow);
+  text-decoration: none !important;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px var(--accent-glow);
-  filter: brightness(1.1);
+  background-color: var(--accent-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  background: transparent;
-  color: white;
-  border: 1px solid var(--border-glass);
-  border-radius: 8px;
-  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: var(--accent-blue) !important;
+  border: 1px solid var(--accent-blue);
+  border-radius: 4px;
+  font-weight: 600;
   transition: var(--transition-smooth);
   cursor: pointer;
+  text-decoration: none !important;
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--accent-light);
 }
 
 .section {
-  padding: 4rem 0;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.section:last-child {
+  border-bottom: none;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
   .page-container {
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 5rem;
   }
 }

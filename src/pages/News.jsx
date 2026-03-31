@@ -32,7 +32,7 @@ const News = () => {
       <div className="section-header" style={{ marginBottom: "3rem" }}>
         <h1>News & Events</h1>
         <p className="hero-subtitle">
-          Updates, announcements, and achievements from Nexus AI Lab.
+          Updates, announcements, and achievements from the AI & LLM Research Group at IIT Bhubaneswar.
         </p>
       </div>
 

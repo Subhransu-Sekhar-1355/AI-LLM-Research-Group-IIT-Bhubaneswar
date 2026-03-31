@@ -71,9 +71,9 @@ const People = () => {
   return (
     <div className="people-container page-content">
       <div className="section-header" style={{ marginBottom: "3rem" }}>
-        <h1>Our Team</h1>
+        <h1>People</h1>
         <p className="hero-subtitle">
-          Meet the brilliant minds behind the research at Nexus AI Lab.
+          Faculty, PhD scholars, undergraduate researchers and alumni of the AI & LLM Research Group at IIT Bhubaneswar.
         </p>
       </div>
 

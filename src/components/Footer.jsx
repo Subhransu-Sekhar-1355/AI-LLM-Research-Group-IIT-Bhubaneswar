@@ -7,9 +7,10 @@ const Footer = () => {
     <footer className="footer glass-panel">
       <div className="footer-container">
         <div className="footer-section">
-          <h3 className="footer-title">Nexus AI Lab</h3>
+          <h3 className="footer-title">AI & LLM Research Group, IIT Bhubaneswar</h3>
           <p className="footer-text">
-            Advancing the frontiers of Artificial Intelligence, Large Language Models, and Efficient Computing.
+            Advancing the frontiers of Artificial Intelligence, Large Language Models, and Efficient Computing at
+            the Indian Institute of Technology Bhubaneswar.
           </p>
           <div className="social-links">
             <a href="#" className="social-icon"><Code size={20} /></a>
@@ -31,15 +32,15 @@ const Footer = () => {
         <div className="footer-section">
           <h4 className="footer-title small">Contact Us</h4>
           <ul className="contact-info">
-            <li><MapPin size={16} className="contact-icon" /> AI Research Center, Room 404</li>
-            <li><Mail size={16} className="contact-icon" /> nexus@university.edu</li>
-            <li><Phone size={16} className="contact-icon" /> +1 (555) 123-4567</li>
+            <li><MapPin size={16} className="contact-icon" /> School of Electrical Sciences, IIT Bhubaneswar</li>
+            <li><Mail size={16} className="contact-icon" /> ai-llm-lab@iitbbs.ac.in</li>
+            <li><Phone size={16} className="contact-icon" /> +91-674-XXX-XXXX</li>
           </ul>
         </div>
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Nexus AI Research Lab. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} AI & LLM Research Group, IIT Bhubaneswar. All rights reserved.</p>
       </div>
     </footer>
   );

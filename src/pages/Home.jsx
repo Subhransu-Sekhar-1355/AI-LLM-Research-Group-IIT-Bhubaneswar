@@ -6,33 +6,101 @@ import './Pages.css';
 const Home = () => {
   return (
     <div className="home-container">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
+      {/* Landing hero inspired by AI‑NLP‑ML layout */}
+      <section className="hero-section hero-academic">
+        <div className="hero-left">
           <div className="pill-badge glass-panel">
             <Activity size={14} className="accent-icon" />
-            <span>Pioneering the Next Generation of AI</span>
+            <span>AI & LLM Research Group · IIT Bhubaneswar</span>
           </div>
+
           <h1 className="hero-title animate-fade-in">
-            Shaping the Future of <br/>
-            <span className="gradient-text">Intelligent Systems</span>
+            THE <span className="gradient-text">AI &amp; LLM</span> GROUP
           </h1>
-          <p className="hero-subtitle">
-            Nexus AI Lab is a premier research team dedicated to advancing Large Language Models, Generative AI, and Resource-Efficient Machine Learning for real-world impact.
-          </p>
+          <h2 className="hero-subheading">
+            School of Electrical Sciences, <br />
+            Indian Institute of Technology Bhubaneswar
+          </h2>
+
+          <div className="hero-about glass-panel">
+            <h3>About</h3>
+            <p>
+              The AI &amp; LLM Research Group at IIT Bhubaneswar focuses on fundamental and applied research in
+              Artificial Intelligence, Large Language Models, and Efficient Machine Learning. We work on problems
+              spanning LLM optimization, model compression, efficient architectures, and AI for healthcare.
+            </p>
+            <p>
+              Our members include faculty, PhD scholars and undergraduate researchers collaborating with academic and
+              industry partners to build impactful, open and reproducible AI systems.
+            </p>
+          </div>
+
           <div className="hero-actions">
-            <Link to="/research" className="btn-primary">
-              Explore Our Research <ArrowRight size={18} className="ml-2" />
+            <Link to="/news" className="btn-primary">
+              Latest News <ArrowRight size={18} className="ml-2" />
             </Link>
-            <Link to="/publications" className="btn-secondary">
-              Latest Publications
+            <Link to="/opportunities" className="btn-secondary">
+              Join the Lab
             </Link>
           </div>
         </div>
-        <div className="hero-visual glass-panel">
-          {/* Abstract AI Representation */}
-          <div className="brain-wrapper glow-effect">
-            <BrainCircuit size={120} className="accent-icon" />
+
+        <div className="hero-right">
+          <div className="hero-card glass-panel">
+            <div className="hero-illustration">
+              <BrainCircuit size={96} className="accent-icon" />
+            </div>
+            <div className="hero-card-content">
+              <h3>Research Snapshot</h3>
+              <ul>
+                <li>Parameter‑efficient fine‑tuning for multilingual LLMs</li>
+                <li>Compression pipelines for on‑device generative models</li>
+                <li>Multimodal models for clinical decision support</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="hero-card glass-panel hero-news-card">
+            <h3>Recent Highlight</h3>
+            <p className="hero-news-date">March 2024</p>
+            <p>
+              Papers from the group on efficient LLM routing and sparsity‑aware inference received recognition at
+              leading international venues.
+            </p>
+            <Link to="/publications" className="hero-news-link">
+              View publications →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Research Areas Snapshot */}
+      <section className="section">
+        <h2 className="section-title">Research Areas</h2>
+        <div className="card-grid">
+          <div className="glass-card">
+            <h3>LLM Optimization</h3>
+            <p className="hero-subtitle">
+              Instruction tuning, alignment, PEFT and evaluation of foundation models for Indian and low-resource languages.
+            </p>
+          </div>
+          <div className="glass-card">
+            <h3>Model Compression</h3>
+            <p className="hero-subtitle">
+              Quantization, pruning and distillation for running large models on edge and resource-constrained devices.
+            </p>
+          </div>
+          <div className="glass-card">
+            <h3>Efficient & Trustworthy AI</h3>
+            <p className="hero-subtitle">
+              Architectures and algorithms for fast, robust and interpretable AI systems.
+            </p>
+          </div>
+          <div className="glass-card">
+            <h3>Healthcare AI</h3>
+            <p className="hero-subtitle">
+              Multimodal AI for clinical decision support, medical imaging and longitudinal health records.
+            </p>
           </div>
         </div>
       </section>

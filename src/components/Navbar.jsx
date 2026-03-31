@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="nav-container">
         <NavLink to="/" className="nav-logo">
           <BrainCircuit className="logo-icon" size={28} />
-          <span className="logo-text gradient-text">Nexus AI Lab</span>
+          <span className="logo-text">AI & LLM Research Group · IIT Bhubaneswar</span>
         </NavLink>
 
         <div className="nav-menu">
@@ -53,7 +53,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="mobile-menu glass-panel animate-fade-in">
+        <div className="mobile-menu animate-fade-in">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}

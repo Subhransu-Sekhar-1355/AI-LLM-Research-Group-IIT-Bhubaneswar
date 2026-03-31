@@ -37,9 +37,9 @@ const Research = () => {
   return (
     <div className="research-container page-content">
       <div className="section-header text-center" style={{ textAlign: "center", marginBottom: "3rem" }}>
-        <h1>Research Domains</h1>
+        <h1>Research</h1>
         <p className="hero-subtitle mx-auto" style={{ margin: "1.5rem auto 0" }}>
-          Our mission is to bridge the gap between theoretical AI advancements and practical, efficient deployment.
+          We work on core problems in Large Language Models, model efficiency and AI for scientific and societal impact.
         </p>
       </div>
 
@@ -70,6 +70,34 @@ const Research = () => {
           </div>
         ))}
       </div>
+
+      <section className="section" style={{ marginTop: "2rem" }}>
+        <h2>Ongoing Problems & Methodology</h2>
+        <div className="card-grid two-cols">
+          <div className="glass-card">
+            <h3>Current Problem Themes</h3>
+            <ul style={{ paddingLeft: "1.5rem", color: "var(--text-secondary)", lineHeight: 1.9 }}>
+              <li>Reducing inference latency for billion-parameter LLMs on campus-scale GPU clusters.</li>
+              <li>Building robust evaluation benchmarks for Indian language LLMs.</li>
+              <li>Designing compression pipelines that preserve safety and alignment properties.</li>
+              <li>Integrating multimodal clinical data into a unified representation space.</li>
+            </ul>
+          </div>
+          <div className="glass-card">
+            <h3>High-level Workflow</h3>
+            <p style={{ color: "var(--text-secondary)", marginBottom: "1rem" }}>
+              Our projects typically follow an iterative cycle: problem formulation, dataset curation, model and
+              algorithm design, large-scale experimentation, and deployment on laboratory or partner infrastructure.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "0.5rem", fontSize: "0.8rem", textAlign: "center" }}>
+              <div className="pill-badge" style={{ margin: 0 }}>Problem</div>
+              <div className="pill-badge" style={{ margin: 0 }}>Data</div>
+              <div className="pill-badge" style={{ margin: 0 }}>Models</div>
+              <div className="pill-badge" style={{ margin: 0 }}>Deployment</div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
